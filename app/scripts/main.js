@@ -30,7 +30,6 @@ function sketchProc(processing) {
             if(alpha>50)
                 stars.push(new Star((-1*maxSize)+Math.round(Math.random() * (2*maxSize)), (-1*maxSize)+Math.round(Math.random() * (2*maxSize)), 100));
         }
-        console.log(stars.length);
     }
 
     processing.draw = function() {
