@@ -1,0 +1,121 @@
+<!doctype html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Hi, I am Carlo Eugster</title>
+        <link rel="canonical" href="http://carlo.io/">
+        <meta name="description" content="Designer. Coder. Entrepreneur. Designing &amp; programming for the web and mobile devices.">
+        <meta property="og:site_name" content="Hi, I am Carlo Eugster">
+        <meta property="og:title" content="Hi, I am Carlo Eugster">
+        <meta property="og:url" content="http://carlo.io">
+        <meta property="og:type" content="article">
+        <meta property="og:image" content="http://carlo.io/images/screenshot.jpg">
+        <meta itemprop="name" content="Hi, I am Carlo Eugster">
+        <meta itemprop="url" content="http://carlo.io">
+        <meta name="keywords" content="carlo, eugster, designer, coder, hacker, enterpreneur, film, game design">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <link rel="shortcut icon" href="/favicon.ico">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <!-- build:css styles/vendor.css -->
+        <!-- bower:css -->
+        <link rel="stylesheet" href="bower_components/normalize.css/normalize.css">
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <!-- build:css(.tmp) styles/main.css -->
+        <link rel="stylesheet" href="styles/main.css">
+        <!-- endbuild -->
+        <!-- build:js scripts/vendor/modernizr.js -->
+        <script src="bower_components/modernizr/modernizr.js"></script>
+        <!-- endbuild -->
+        <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet">
+    </head>
+    <body>
+        <!--[if lt IE 10]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="fade" style="display: none;">
+            <canvas id="bgcanvas"></canvas>
+
+            <div class="wrapper">
+                <div class="left">
+                    <div class="profile"></div>
+                </div>
+                <div class="right">
+                    <h1>Hello, I am Carlo!</h1>
+                    <p>I am a <a alt="Carlo Eugster on Github" href="https://github.com/carloe">hacker</a>, <a alt="Carlo Eugster on Dribbble" href="http://dribbble.com/carloeugster/">designer</a> and <a alt="Carlo Eugster on LinkedIn" href="http://www.linkedin.com/in/carloeugster/">entrepreneur</a> currently living in Los Angeles. These are some of my things:</p>
+                    <ul class="social">
+                        <li>
+                            <a alt="Carlo Eugster on Github" href="http://github.com/carloe/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-square-o fa-stack-2x"></i>
+                                    <i class="fa fa-github-alt fa-stack-1x"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a alt="Carlo Eugster on Dribbble" href="http://dribbble.com/carloeugster/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-square-o fa-stack-2x"></i>
+                                    <i class="fa fa-dribbble fa-stack-1x"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a alt="Carlo Eugster on LinkedIn" href="http://www.linkedin.com/in/carloeugster/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-square-o fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a alt="Carlo Eugster on Twitter" href="https://twitter.com/carloeugster">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-square-o fa-stack-2x"></i>
+                                    <i class="fa fa-twitter fa-stack-1x"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <footer></footer>
+        </div>
+
+
+        <!-- build:js scripts/vendor.js -->
+        <!-- bower:js -->
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/Processing.js/processing.min.js"></script>
+        <script src="scripts/jprocessingjs-0.9.min.js"></script>
+        <!-- endbower -->
+        <!-- endbuild -->
+
+        <script>
+            $(document).ready(function() {
+                $('#fade').fadeIn(1200);
+            });
+        </script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='//www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X');ga('send','pageview');
+        </script>
+
+        <!-- build:js({app,.tmp}) scripts/main.js -->
+        <script src="scripts/main.js"></script>
+        <!-- endbuild -->
+</body>
+</html>

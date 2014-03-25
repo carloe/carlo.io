@@ -1,0 +1,11 @@
+{
+  "name": "carlo-io",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "jquery": "~1.11.0",
+    "Processing.js": "~1.4.7",
+    "normalize.css": "~3.0.0"
+  },
+  "devDependencies": {}
+}

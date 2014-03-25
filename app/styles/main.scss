@@ -1,0 +1,169 @@
+// bower:scss
+// endbower
+
+@import url(http://fonts.googleapis.com/css?family=Metrophobic);
+
+$wrapperWidth: 578px;
+$profileWidth: 135px;
+$profileBorderWidth: 5px;
+
+* { margin: 0; padding: 0;}
+
+body, html {
+    height:100%;
+    font-family: 'Metrophobic', sans-serif;
+    background-color: #000;
+    color: #FFF;
+}
+
+.wrapper {
+    width: $wrapperWidth;
+    height: 370px;
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    .left {
+        width:$profileWidth;
+        float: left;
+    }
+
+    .right {
+        width:($wrapperWidth - $profileWidth - 23);
+        height: 100%;
+        float: right;
+
+        h1 {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        p {
+            margin: 10px 0;
+            color: RGBA(242, 255, 255, 0.8);
+            line-height: 1.5;
+
+            a {
+                text-decoration: none;
+                color: RGBA(255, 255, 255, 1.0);
+                padding: 0 3px 3px 3px;
+                border:1px dotted RGBA(242,255,255,0.4);
+            }
+        }
+
+        ul.social {
+            margin: 12px -3px;
+            list-style-type: none;
+
+            li {
+                margin-right: 5px;
+                display: inline;
+
+                a {
+                    text-decoration: none;
+                    color: RGBA(242, 255, 255, 0.8);
+                }
+
+                a:hover {
+                    text-decoration: none;
+                    color: RGBA(255, 255, 255, 1.0);
+                }
+            }
+        }
+    }
+
+    .profile {
+        margin: 10px 0;
+        width: $profileWidth;
+        height: $profileWidth;
+        border-radius: ($profileWidth / 2);
+        -webkit-border-radius: ($profileWidth / 2);
+        -moz-border-radius: ($profileWidth / 2);
+        background: url(../images/profile.jpg) no-repeat;
+        background-size: cover;
+        border:$profileBorderWidth solid white;
+        box-sizing:border-box;
+        -moz-box-sizing:border-box;
+        -webkit-box-sizing:border-box;
+        background-color: #FFF;
+    }
+}
+
+footer {
+    color: white;
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    background-image: url(../images/mountains.png);
+    text-align: center;
+    padding-top: 50px;
+    height: 65px;
+}
+
+@media screen and (max-width: 480px) {
+    #bgcanvas {
+        height: 200px;
+        width: 100%;
+    }
+
+    .wrapper {
+        margin: 35px auto;
+        width: 100%;
+        position: absolute;
+        top:0px;
+        z-index: 999;
+
+        .left {
+            width: 100%;
+            height: 160px;
+        }
+
+        .right {
+            margin: 0px 18px;
+            width: auto;
+            clear: both;
+
+            h1 {
+                width: 100%;
+                font-size: 32px;
+                margin-bottom: 8px;
+            }
+
+            p {
+                width: 100%;
+                margin: 0px;
+                padding: 0px;
+                color: RGBA(242, 255, 255, 0.8);
+                line-height: 1.5;
+                font-size: 20px;
+
+                a {
+                    padding: -1px 3px 2px 3px;
+                }
+            }
+
+            ul.social {
+                margin: 22px -3px;
+            }
+        }
+
+        .profile {
+            width: 80px;
+            height: 80px;
+            margin: auto;
+            border-radius: (40);
+            -webkit-border-radius: (40);
+            -moz-border-radius: (40);
+        }
+    }
+
+    footer {
+        position: absolute;
+        width: 100%;
+        top: 130px;
+        //bottom: 0px;
+    }
+}
