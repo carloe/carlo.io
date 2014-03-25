@@ -18,7 +18,7 @@ body, html {
 
 .wrapper {
     width: $wrapperWidth;
-    height: 370px;
+    height: 200px;
     position: absolute;
     top:0;
     bottom: 0;
@@ -104,6 +104,10 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+    body {
+        overflow: hidden;
+    }
+
     #bgcanvas {
         height: 200px;
         width: 100%;
