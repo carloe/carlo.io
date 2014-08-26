@@ -1,24 +1,59 @@
 // bower:scss
 // endbower
 
-@import url(http://fonts.googleapis.com/css?family=Metrophobic);
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
 
+@import 'carloio.scss';
+
+/*===----------------------------------------------------------------------===//
+     Config
+//===----------------------------------------------------------------------===*/
 $wrapperWidth: 578px;
-$profileWidth: 135px;
 $profileBorderWidth: 5px;
+$profileWidth: 144px - ($profileBorderWidth*2);
 
+// regular metrics
+$mountain-height: 0px;
+
+// Mobile Metrics
+$mobile-canvas-height: 200px;
+$mobile-mountain-height: 65px;
+
+// Font Metrics
+$base-font-size: 16px;
+$title-size-multi:  2.5;
+
+// Colors
+$backrgound-color: #0E141F;
+$base-link-color: #FFF;
+$footer-text-color: #A9CBE5;
+
+
+/*===----------------------------------------------------------------------===//
+     Master Styles
+//===----------------------------------------------------------------------===*/
 * { margin: 0; padding: 0;}
 
 body, html {
     height:100%;
-    font-family: 'Metrophobic', sans-serif;
-    background-color: #000;
+    font-family: 'Lato', sans-serif;
+    font-size: $base-font-size;
+    letter-spacing: 0.3px;
+    font-weight: 400;
+    background-color: $backrgound-color;
     color: #FFF;
+
+    font-weight:normal;
+    -webkit-font-smoothing: antialiased;
+}
+
+#bgcanvas {
+    bottom: $mountain-height;
 }
 
 .wrapper {
     width: $wrapperWidth;
-    height: 200px;
+    height: 150px;
     position: absolute;
     top:0;
     bottom: 0;
@@ -37,46 +72,54 @@ body, html {
         float: right;
 
         h1 {
+            font-size: ($base-font-size * $title-size-multi);
+            font-weight: 300;
             margin: 0px;
             padding: 0px;
         }
 
         p {
-            margin: 10px 0;
-            color: RGBA(242, 255, 255, 0.8);
+            margin: 5px 0 15px 0;
+            color: transparentize($base-link-color, 0.4);
             line-height: 1.5;
 
             a {
                 text-decoration: none;
-                color: RGBA(255, 255, 255, 1.0);
+                color: $base-link-color;
                 padding: 0 3px 3px 3px;
-                border:1px dotted RGBA(242,255,255,0.4);
+                font-weight: 400;
+            }
+
+            a:hover {
+                color: transparentize($base-link-color, 0.7);
+                text-decoration: underline;
             }
         }
 
         ul.social {
             margin: 12px -3px;
             list-style-type: none;
+            font-size: 20px;
 
             li {
-                margin-right: 5px;
                 display: inline;
+                margin-right: 5px;
 
                 a {
                     text-decoration: none;
-                    color: RGBA(242, 255, 255, 0.8);
+                    color: transparentize($base-link-color, 0.15);
                 }
 
                 a:hover {
                     text-decoration: none;
-                    color: RGBA(255, 255, 255, 1.0);
+                    color: transparentize($base-link-color, 0.7);
                 }
             }
         }
     }
 
-    .profile {
-        margin: 10px 0;
+    .avatar {
+        margin: $profileBorderWidth 0;
         width: $profileWidth;
         height: $profileWidth;
         border-radius: ($profileWidth / 2);
@@ -93,81 +136,138 @@ body, html {
 }
 
 footer {
-    color: white;
     position: absolute;
-    bottom: 0px;
-    width: 100%;
-    background-image: url(../images/mountains.png);
+    display: block;
     text-align: center;
-    padding-top: 50px;
-    height: 65px;
+    width: 100%;
+    bottom: 10px;
+
+    font-size: 11px;
+    color: transparentize($footer-text-color, 0.8);
+
+    span {
+        display: block;
+    }
+
+    a {
+        color: transparentize($footer-text-color, 0.75);
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 800;
+    }
 }
 
-@media screen and (max-width: 480px) {
+.mountains {
+    position: absolute;
+    bottom: $mountain-height;
+    width: 100%;
+    min-height: 120px;
+    background-image: url(../images/mountains.png);
+}
+
+
+/*===----------------------------------------------------------------------===//
+     Media: 640px and below
+//===----------------------------------------------------------------------===*/
+@media screen and (max-width: 640px) {
     body {
         overflow: hidden;
     }
 
     #bgcanvas {
-        height: 200px;
+        height: $mobile-canvas-height;
+        bottom: inherit;
         width: 100%;
     }
 
     .wrapper {
         margin: 35px auto;
-        width: 100%;
+        width: 75%;
         position: absolute;
         top:0px;
         z-index: 999;
 
         .left {
             width: 100%;
-            height: 160px;
+            height: $mobile-canvas-height - ($mobile-mountain-height/2);
         }
 
         .right {
-            margin: 0px 18px;
-            width: auto;
+            float: left;
             clear: both;
+            width: 100%;
+
+            text-align: center;
 
             h1 {
-                width: 100%;
-                font-size: 32px;
-                margin-bottom: 8px;
+                font-size: 50px;
+                margin-bottom: 15px;
             }
 
             p {
-                width: 100%;
-                margin: 0px;
-                padding: 0px;
-                color: RGBA(242, 255, 255, 0.8);
-                line-height: 1.5;
-                font-size: 20px;
-
-                a {
-                    padding: -1px 3px 2px 3px;
-                }
+                line-height: 1.3;
+                font-size: 16px;
             }
 
             ul.social {
-                margin: 22px -3px;
+                font-size: 32px;
+                margin: 25px -3px;
+
+                li {
+                    a {
+                        color: transparentize($base-link-color, 0.65);
+                    }
+
+                    a:hover {
+                        color: transparentize($base-link-color, 0.2);
+                    }
+                }
             }
         }
 
-        .profile {
-            width: 80px;
-            height: 80px;
+        .avatar {
+            width: $mobile-canvas-height/2;
+            height: $mobile-canvas-height/2;
             margin: auto;
-            border-radius: (40);
-            -webkit-border-radius: (40);
-            -moz-border-radius: (40);
+            border-radius: ($mobile-canvas-height/4);
+            -webkit-border-radius: ($mobile-canvas-height/4);
+            -moz-border-radius: ($mobile-canvas-height/4);
         }
     }
 
+
     footer {
-        position: absolute;
-        width: 100%;
-        top: 130px;
-        //bottom: 0px;
+        .contents {
+            margin: auto;
+            width: 85%;
+            border-top: 1px solid transparentize($footer-text-color, 0.9);
+            padding-top: 10px;
+        }
+    }
+
+    .mountains {
+        height: $mobile-mountain-height;
+        top: $mobile-canvas-height - $mobile-mountain-height;
+    }
+}
+
+/*===----------------------------------------------------------------------===//
+     Media: 510px and below
+//===----------------------------------------------------------------------===*/
+@media screen and (max-width: 510px) {
+    .wrapper {
+
+        width: 375px;
+
+        .right {
+
+            h1 { font-size: 40px; }
+
+
+            p { font-size: 14px; }
+
+
+            ul.social { font-size: 24px; }
+        }
     }
 }
