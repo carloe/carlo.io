@@ -86,8 +86,7 @@ body, html {
             a {
                 text-decoration: none;
                 color: $base-link-color;
-                padding: 0 3px 3px 3px;
-                font-weight: 400;
+                font-weight: 500;
             }
 
             a:hover {
@@ -179,6 +178,7 @@ footer {
 @media screen and (max-width: 640px) {
     body {
         overflow: hidden;
+        background-color: #366281;
     }
 
     #bgcanvas {
@@ -189,7 +189,7 @@ footer {
 
     .wrapper {
         margin: 35px auto;
-        width: 75%;
+        width: 80%;
         position: absolute;
         top:0px;
         z-index: 999;
@@ -208,7 +208,7 @@ footer {
 
             h1 {
                 font-size: 50px;
-                margin-bottom: 15px;
+                margin-bottom: 10px;
             }
 
             p {
@@ -218,7 +218,7 @@ footer {
 
             ul.social {
                 font-size: 32px;
-                margin: 25px -3px;
+                margin: 35px -3px;
 
                 li {
                     a {
