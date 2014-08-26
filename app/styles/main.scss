@@ -24,7 +24,7 @@ $base-font-size: 16px;
 $title-size-multi:  2.5;
 
 // Colors
-$backrgound-color: #0E141F;
+$background-color: #0E141F;
 $base-link-color: #FFF;
 $footer-text-color: #A9CBE5;
 
@@ -40,7 +40,7 @@ body, html {
     font-size: $base-font-size;
     letter-spacing: 0.3px;
     font-weight: 400;
-    background-color: $backrgound-color;
+    background-color: $background-color;
     color: #FFF;
 
     font-weight:normal;
@@ -161,8 +161,15 @@ footer {
     position: absolute;
     bottom: $mountain-height;
     width: 100%;
-    min-height: 120px;
-    background-image: url(../images/mountains.png);
+
+    .range {
+        min-height: 120px;
+        background-image: url(../images/mountains.png);
+    }
+
+    .base {
+        display: none;
+    }
 }
 
 
@@ -246,8 +253,19 @@ footer {
     }
 
     .mountains {
-        height: $mobile-mountain-height;
         top: $mobile-canvas-height - $mobile-mountain-height;
+
+        .range {
+                height: $mobile-mountain-height;
+                top: 0;
+        }
+
+        .base {
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: $background-color;
+        }
     }
 }
 
@@ -264,10 +282,37 @@ footer {
             h1 { font-size: 40px; }
 
 
-            p { font-size: 14px; }
+            p { font-size: 16px; }
 
 
             ul.social { font-size: 24px; }
+        }
+    }
+}
+
+/*===----------------------------------------------------------------------===//
+     Media: Mobile
+//===----------------------------------------------------------------------===*/
+@media screen and (max-width: 360px) {
+    .wrapper {
+
+        max-width: 270px;
+
+        .right {
+
+            h1 { font-size: 36px; }
+
+
+            p { font-size: 16px; }
+
+
+            ul.social { font-size: 34px; }
+        }
+    }
+
+    footer {
+        .contents {
+            font-size: 8px;
         }
     }
 }
