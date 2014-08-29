@@ -129,7 +129,7 @@ body, html {
         -moz-box-sizing:border-box;
         -webkit-box-sizing:border-box;
         background: url(../images/profile.jpg) no-repeat;
-        background-size: cover;
+        background-size: 102%;
         background-position: center;
         background-color: RGBA(255,255,255,0.15);
     }
@@ -179,10 +179,12 @@ footer {
 
     .wrapper {
         .avatar {
-                background-size: cover;
+            background-color: red;
+                background-position: center !important;
+                background-size: 102% 102% !important;
                 background: url(../images/profile@2x.jpg) no-repeat;
-            }
         }
+    }
     .mountains {
         .range {
             background-size: auto 119px;
