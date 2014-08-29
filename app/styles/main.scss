@@ -124,13 +124,14 @@ body, html {
         border-radius: ($profileWidth / 2);
         -webkit-border-radius: ($profileWidth / 2);
         -moz-border-radius: ($profileWidth / 2);
-        background: url(../images/profile.jpg) no-repeat;
-        background-size: cover;
         border:$profileBorderWidth solid white;
         box-sizing:border-box;
         -moz-box-sizing:border-box;
         -webkit-box-sizing:border-box;
-        background-color: #FFF;
+        background: url(../images/profile.jpg) no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-color: RGBA(255,255,255,0.15);
     }
 }
 
@@ -162,12 +163,31 @@ footer {
     width: 100%;
 
     .range {
-        min-height: 120px;
+        min-height: 119px;
         background-image: url(../images/mountains.png);
     }
 
     .base {
         display: none;
+    }
+}
+
+@media only screen and (min--moz-device-pixel-ratio: 2),
+    only screen and (-o-min-device-pixel-ratio: 2/1),
+    only screen and (-webkit-min-device-pixel-ratio: 2),
+    only screen and (min-device-pixel-ratio: 2) {
+
+    .wrapper {
+        .avatar {
+                background-size: cover;
+                background: url(../images/profile@2x.jpg) no-repeat;
+            }
+        }
+    .mountains {
+        .range {
+            background-size: auto 119px;
+            background-image: url(../images/mountains@2x.png);
+        }
     }
 }
 
@@ -239,6 +259,8 @@ footer {
             border-radius: ($mobile-canvas-height/4);
             -webkit-border-radius: ($mobile-canvas-height/4);
             -moz-border-radius: ($mobile-canvas-height/4);
+            background-position: center;
+            background-size: cover;
         }
     }
 
